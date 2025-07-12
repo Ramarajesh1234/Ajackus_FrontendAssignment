@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header>
+            <h1> Employee Directory </h1>
+            <input type="text" id="searchInput" placeholder="Search by name or email" />
+        </header>
+        <div id="filters">
+            <!--Add dropdowns for -->
+        </div>
+        <section id="employeeList">
+            <#list employees as emp>
+              <div class="employee-card" data-id="${emp.id}">
+                <p><strong>${emp.firstName} ${emp.lastName}</strong></p>
+                <p>Email: ${emp.email}</p>
+                <p>Department: ${emp.department}</p>
+                <p>Role: ${emp.role}</p>
+                <button onclick="editEmployee(${emp.id})">Edit</button>
+                <button onclick="deleteEmployee(${emp.id})">Delete</button>
+              </div>
+            </#list>
+        </section>
+        <script src="Script.js"></script>
+    </body>
+</html>
